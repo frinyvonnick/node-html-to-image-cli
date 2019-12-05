@@ -1,0 +1,21 @@
+{
+  "name": "node-html-to-image-cli",
+  "version": "1.0.0",
+  "description": "A cli based on node-html-to-image that generates images from HTML",
+  "main": "src/index.js",
+  "repository": "git@github.com:frinyvonnick/node-html-to-image-cli.git",
+  "author": "FRIN Yvonnick <frin.yvonnick@gmail.com>",
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">=10"
+  },
+  "bin": {
+    "node-html-to-image-cli": "./src/index.js"
+  },
+  "dependencies": {
+    "node-html-to-image": "^1.0.0",
+    "ora": "^4.0.3",
+    "signale": "^1.4.0",
+    "yargs": "^15.0.2"
+  }
+}
