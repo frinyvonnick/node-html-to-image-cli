@@ -56,6 +56,11 @@ npx node-html-to-image-cli ./index.html ./image.png
 |--------|-------|----------------------------------------|
 | --type | -t    | type of image that should be generated |
 
+
+## Related
+
+- [node-html-to-image](https://github.com/frinyvonnick/node-html-to-image) - API for this cli
+
 ## Author
 
 👤 **FRIN Yvonnick <frin.yvonnick@gmail.com>**
