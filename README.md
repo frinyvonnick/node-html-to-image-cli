@@ -43,11 +43,24 @@ npm install -g node-html-to-image-cli
 npx node-html-to-image-cli ./index.html ./image.png
 ```
 
+### Arguments
+
+| Argument | Description                        |
+|----------|------------------------------------|
+| html     | path to a html file                |
+| output   | path where image should be created |
+
+### Options
+
+| Option | Alias | Description                            |
+|--------|-------|----------------------------------------|
+| --type | -t    | type of image that should be generated |
+
 ## Author
 
 👤 **FRIN Yvonnick <frin.yvonnick@gmail.com>**
 
-* Website: https://yvonnickfrin.dev
+* Website: [https://yvonnickfrin.dev](https://yvonnickfrin.dev)
 * Twitter: [@yvonnickfrin](https://twitter.com/yvonnickfrin)
 * Github: [@frinyvonnick](https://github.com/frinyvonnick)
 
