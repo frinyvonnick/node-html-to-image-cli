@@ -48,7 +48,7 @@ npx node-html-to-image-cli examples/simple.html ./image.png
 With additional data passed to the template
 
 ```sh
-npx node-html-to-image-cli examples/handlebars.html ./image.png --content=./examples/handlebars.json
+npx node-html-to-image-cli examples/handlebars.html ./image.png --content ./examples/handlebars.json
 ```
 
 ### Arguments
