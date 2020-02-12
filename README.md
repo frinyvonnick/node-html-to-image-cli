@@ -19,7 +19,7 @@
 
 ## Description
 
-This is cli is based on [node-html-to-image](https://github.com/frinyvonnick/node-html-to-image). It generates an image from an HTML file. `node-html-to-image` provides more options like templating using [Handlebars](https://handlebarsjs.com/). It also let you pass down custom configuration to puppeteer which is used under the hood.
+This is cli is based on [node-html-to-image](https://github.com/frinyvonnick/node-html-to-image). It generates an image from an HTML file. `node-html-to-image` provides more options and lets you pass down custom configuration to puppeteer which is used under the hood.
 
 ![node-html-to-image-cli's demo](https://raw.githubusercontent.com/frinyvonnick/node-html-to-image-cli/master/misc/demo.gif)
 
@@ -39,8 +39,16 @@ npm install -g node-html-to-image-cli
 
 ## Usage
 
+Without handlebars template
+
 ```sh
-npx node-html-to-image-cli ./index.html ./image.png
+npx node-html-to-image-cli examples/simple.html ./image.png
+```
+
+With additional data passed to the template
+
+```sh
+npx node-html-to-image-cli examples/handlebars.html ./image.png --content ./examples/handlebars.json
 ```
 
 ### Arguments
@@ -52,9 +60,10 @@ npx node-html-to-image-cli ./index.html ./image.png
 
 ### Options
 
-| Option | Alias | Description                            |
-|--------|-------|----------------------------------------|
-| --type | -t    | type of image that should be generated |
+| Option    | Alias | Description                                     |
+|-----------|-------|-------------------------------------------------|
+| --type    | -t    | type of image that should be generated          |
+| --content | -c    | path to a content file with handlebars template |
 
 
 ## Related

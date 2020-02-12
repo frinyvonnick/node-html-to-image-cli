@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 const fs = require('fs')
+const path = require('path')
 const signale = require('signale')
 const ora = require('ora')
 const nodeHtmlToImage = require('node-html-to-image')
@@ -22,11 +23,27 @@ require('yargs')
         default: 'png',
         description: 'type of image that should be generated'
       })
+      .option('content', {
+        alias: 'c',
+        type: 'string',
+        describe: 'path to a json file with the content',
+      })
   }, (argv) => {
     signale.start(`node-html-to-image-cli v${pkg.version}`)
     if (!fs.existsSync(argv.html)) return signale.error('Please provide an existing HTML file path as first parameter.')
     if (!argv.output) return signale.error('Please provide an output path as second paramter.')
     if (!['png', 'jpeg'].includes(argv.type)) return signale.error('The type option should be valued to "png" or "jpeg".')
+
+    let content
+    if (argv.content) {
+      try {
+        content = require(path.resolve(argv.content))
+      } catch (e) {
+        if(e.code === 'MODULE_NOT_FOUND'){
+          return signale.error(`Could not find data file ${argv.content}`)
+        }
+      }
+    }
 
     const spinner = ora('Getting HTML content').start()
     const html = fs.readFileSync(argv.html).toString('utf8')
@@ -34,6 +51,7 @@ require('yargs')
     nodeHtmlToImage({
       html,
       output: argv.output,
+      content,
       type: argv.type,
     })
       .then(() => {
