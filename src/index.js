@@ -23,6 +23,11 @@ require('yargs')
         default: 'png',
         description: 'type of image that should be generated'
       })
+      .option('transparent', {
+        type: 'boolean',
+        default: false,
+        description: 'determine if background of the generated image should be transparent'
+      })
       .option('content', {
         alias: 'c',
         type: 'string',
@@ -53,6 +58,7 @@ require('yargs')
       output: argv.output,
       content,
       type: argv.type,
+      transparent: argv.transparent,
     })
       .then(() => {
         spinner.stop()

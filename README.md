@@ -63,6 +63,7 @@ npx node-html-to-image-cli examples/handlebars.html ./image.png --content ./exam
 | Option    | Alias | Description                                     |
 |-----------|-------|-------------------------------------------------|
 | --type    | -t    | type of image that should be generated          |
+| --transparent    | none    | determine if background of the generated image should be transparent           |
 | --content | -c    | path to a content file with handlebars template |
 
 

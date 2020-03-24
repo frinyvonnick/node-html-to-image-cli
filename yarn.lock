@@ -435,10 +435,10 @@ neo-async@^2.6.0:
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.6.1.tgz#ac27ada66167fa8849a6addd837f6b189ad2081c"
   integrity sha512-iyam8fBuCUpWeKPGpaNMetEocMt364qkCsfL9JuhjXX6dRnguRVOfk2GZaDpPjcOKiiXCPINZC1GczQ7iTq3Zw==
 
-node-html-to-image@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/node-html-to-image/-/node-html-to-image-1.0.0.tgz#75f16536f28265df35c7b086c22cbaf6c4da93a1"
-  integrity sha512-rZz7I7T19uMnQbfhn8QMZkTyQAgceXkiESKEjR3xa76MRKVKQoANX7eVogqqDUUe4/Xli4zEkeQ09LTWXznmAg==
+node-html-to-image@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/node-html-to-image/-/node-html-to-image-1.2.0.tgz#34ab10d1e23e808acdd384f7f89c3848cb9e0684"
+  integrity sha512-Z+YvvY2PSc9xULWd2NtqfO4x9rNzEiNOjA1QjOdB/BShVA7ULMJ3YKaFbn0wVuFqYJ6WSaY7ruw9frcJpXQNVQ==
   dependencies:
     handlebars "^4.5.3"
     puppeteer "^2.0.0"
