@@ -1,5 +1,21 @@
 # Changelog
 
+<a name="1.1.0"></a>
+## 1.1.0 (2020-03-24)
+
+### Added
+
+- ✨ Add an option to provide content ([#1](https://github.com/frinyvonnick/node-html-to-image-cli/issues/1)) [[f19dc85](https://github.com/frinyvonnick/node-html-to-image-cli/commit/f19dc85204f67b08eadc2324d5762ca745f38496)]
+
+### Changed
+
+- ⬆️ Upgrade node-html-to-image and add transparent option support [[53afe6d](https://github.com/frinyvonnick/node-html-to-image-cli/commit/53afe6dc940db710747828869ab6ec531a3fe12d)]
+
+### Miscellaneous
+
+- 📝 Add a related section [[01f642e](https://github.com/frinyvonnick/node-html-to-image-cli/commit/01f642eeb5ccfaab836d4dad3c6bf310ce623a0a)]
+
+
 <a name="1.0.0"></a>
 ## 1.0.0 (2019-12-06)
 
