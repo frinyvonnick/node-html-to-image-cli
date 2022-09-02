@@ -1,5 +1,12 @@
 # Changelog
 
+<a name="1.1.1"></a>
+## 1.1.1 (2022-09-02)
+
+### Added
+
+- ✨ Add an option to provide json on command line
+
 <a name="1.1.0"></a>
 ## 1.1.0 (2020-03-24)
 

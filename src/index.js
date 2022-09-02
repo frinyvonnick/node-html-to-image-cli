@@ -28,6 +28,11 @@ require('yargs')
         default: false,
         description: 'determine if background of the generated image should be transparent'
       })
+      .option('json', {
+        alias: 'j',
+        type: 'string',
+        describe: 'json string with the content',
+      })
       .option('content', {
         alias: 'c',
         type: 'string',
@@ -47,6 +52,12 @@ require('yargs')
         if(e.code === 'MODULE_NOT_FOUND'){
           return signale.error(`Could not find data file ${argv.content}`)
         }
+      }
+    } else if (argv.json) {
+      try {
+        content = JSON.parse(argv.json);
+      } catch (e) {
+        return signale.error(`Could not parse json ${argv.json}`)
       }
     }
 
