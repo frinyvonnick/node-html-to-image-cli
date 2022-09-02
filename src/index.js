@@ -28,10 +28,20 @@ require('yargs')
         default: false,
         description: 'determine if background of the generated image should be transparent'
       })
+      .option('json', {
+        alias: 'j',
+        type: 'string',
+        describe: 'json string with the content',
+      })
       .option('content', {
         alias: 'c',
         type: 'string',
         describe: 'path to a json file with the content',
+      })
+      .option('selector', {
+        alias: 's',
+        type: 'string',
+        describe: 'selector of element to capture (default "body")',
       })
   }, (argv) => {
     signale.start(`node-html-to-image-cli v${pkg.version}`)
@@ -48,8 +58,13 @@ require('yargs')
           return signale.error(`Could not find data file ${argv.content}`)
         }
       }
+    } else if (argv.json) {
+      try {
+        content = JSON.parse(argv.json);
+      } catch (e) {
+        return signale.error(`Could not parse json ${argv.json}`)
+      }
     }
-
     const spinner = ora('Getting HTML content').start()
     const html = fs.readFileSync(argv.html).toString('utf8')
     spinner.text = 'Generating image from HTML'
@@ -59,6 +74,7 @@ require('yargs')
       content,
       type: argv.type,
       transparent: argv.transparent,
+      selector: argv.selector,
     })
       .then(() => {
         spinner.stop()

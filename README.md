@@ -1,6 +1,6 @@
 <h1 align="center">Welcome to node-html-to-image-cli 👋</h1>
 <p>
-  <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
+  <img alt="Version" src="https://img.shields.io/badge/version-1.1.1-blue.svg?cacheSeconds=2592000" />
   <img src="https://img.shields.io/badge/node-%3E%3D10-blue.svg" />
   <a href="https://github.com/frinyvonnick/node-html-to-image-cli#readme" target="_blank">
     <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
@@ -45,10 +45,22 @@ Without handlebars template
 npx node-html-to-image-cli examples/simple.html ./image.png
 ```
 
-With additional data passed to the template
+With file based json data passed to the template
 
 ```sh
 npx node-html-to-image-cli examples/handlebars.html ./image.png --content ./examples/handlebars.json
+```
+
+With command line json data passed to the template
+
+```sh
+npx node-html-to-image-cli examples/handlebars.html ./image.png --json '{{"you":"yours"}}'
+```
+
+With selector
+
+```sh
+npx node-html-to-image-cli examples/simple.html ./image.png --selector 'h1'
 ```
 
 ### Arguments
@@ -64,7 +76,9 @@ npx node-html-to-image-cli examples/handlebars.html ./image.png --content ./exam
 |-----------|-------|-------------------------------------------------|
 | --type    | -t    | type of image that should be generated          |
 | --transparent    | none    | determine if background of the generated image should be transparent           |
-| --content | -c    | path to a content file with handlebars template |
+| --content | -c    | path to a content file with handlebars data     |
+| --json    | -j    | json string with handlebars data                |
+| --selector | -s    | string of selector to capture (default "body")  |
 
 
 ## Related
