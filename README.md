@@ -56,6 +56,13 @@ With command line json data passed to the template
 ```sh
 npx node-html-to-image-cli examples/handlebars.html ./image.png --json '{{"you":"yours"}}'
 ```
+
+With selector
+
+```sh
+npx node-html-to-image-cli examples/simple.html ./image.png --selector 'h1'
+```
+
 ### Arguments
 
 | Argument | Description                        |
@@ -71,6 +78,7 @@ npx node-html-to-image-cli examples/handlebars.html ./image.png --json '{{"you":
 | --transparent    | none    | determine if background of the generated image should be transparent           |
 | --content | -c    | path to a content file with handlebars data     |
 | --json    | -j    | json string with handlebars data                |
+| --selector | -s    | string of selector to capture (default "body")  |
 
 
 ## Related

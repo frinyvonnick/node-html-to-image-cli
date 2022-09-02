@@ -6,6 +6,10 @@
 ### Added
 
 - ✨ Add an option to provide json on command line
+- ✨ Add an option to provide selector on command line
+
+### Changed
+- ⬆️ Upgrade node-html-to-image
 
 <a name="1.1.0"></a>
 ## 1.1.0 (2020-03-24)

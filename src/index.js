@@ -38,6 +38,11 @@ require('yargs')
         type: 'string',
         describe: 'path to a json file with the content',
       })
+      .option('selector', {
+        alias: 's',
+        type: 'string',
+        describe: 'selector of element to capture (default "body")',
+      })
   }, (argv) => {
     signale.start(`node-html-to-image-cli v${pkg.version}`)
     if (!fs.existsSync(argv.html)) return signale.error('Please provide an existing HTML file path as first parameter.')
@@ -60,7 +65,6 @@ require('yargs')
         return signale.error(`Could not parse json ${argv.json}`)
       }
     }
-
     const spinner = ora('Getting HTML content').start()
     const html = fs.readFileSync(argv.html).toString('utf8')
     spinner.text = 'Generating image from HTML'
@@ -70,6 +74,7 @@ require('yargs')
       content,
       type: argv.type,
       transparent: argv.transparent,
+      selector: argv.selector,
     })
       .then(() => {
         spinner.stop()
